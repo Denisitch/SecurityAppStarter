@@ -1,18 +1,13 @@
 package com.denisitch.securityapp.security;
 
 import com.denisitch.securityapp.model.Person;
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-public class PersonDetails implements UserDetails {
-
-    private final Person person;
-
-    public PersonDetails(Person person) {
-        this.person = person;
-    }
+public record PersonDetails(@Getter Person person) implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
