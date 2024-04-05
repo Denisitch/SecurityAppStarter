@@ -42,7 +42,10 @@ public class SecurityConfig {
                         .loginPage("/auth/login")
                         .loginProcessingUrl("/process_login")
                         .defaultSuccessUrl("/show-user-info", true)
-                        .failureUrl("/auth/login?error"));
+                        .failureUrl("/auth/login?error"))
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/auth/login"));
         return http.build();
     }
 
