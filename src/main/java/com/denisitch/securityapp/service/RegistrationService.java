@@ -20,6 +20,7 @@ public class RegistrationService {
     public void register(Person person) {
         String encodePass = passwordEncoder.encode(person.getPassword());
         person.setPassword(encodePass);
+        person.setRole("ROLE_USER");
         peopleRepository.save(person);
     }
 }
