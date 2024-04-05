@@ -8,4 +8,9 @@ CREATE TABLE person
 
 INSERT INTO person (username, years_of_birth, password)
 VALUES ('test_user1', 1960, 'test_password'),
-       ('test_user2', 1960, 'test_password')
+       ('test_user2', 1960, 'test_password');
+
+TRUNCATE TABLE person;
+
+ALTER TABLE person
+    ADD COLUMN role varchar(128) NOT NULL;

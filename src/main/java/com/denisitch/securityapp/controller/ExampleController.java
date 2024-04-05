@@ -17,4 +17,9 @@ public class ExampleController {
         model.addAttribute("person", personDetails.getPerson());
         return "person-info";
     }
+
+    @GetMapping("/admin")
+    public String adminPage() {
+        return "admin";
+    }
 }
